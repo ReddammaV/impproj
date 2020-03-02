@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Dboperation } from 'src/app/core/model/dboperation.enum';
-import { Employee } from 'src/app/core/model/employee';
-import { ApiService } from 'src/app/services/api.service';
+import { Dboperation } from '../../../core/model/dboperation.enum';
+import { Employee } from '../../../core/model/employee';
+import { ApiService } from '../../../services/api.service';
 import { Router } from '@angular/router';
 import { first } from "rxjs/operators";
 

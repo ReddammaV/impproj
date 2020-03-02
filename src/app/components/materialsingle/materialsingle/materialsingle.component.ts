@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Dboperation } from 'src/app/core/model/dboperation.enum';
-import { ApiService } from 'src/app/services/api.service';
-import { Employee } from 'src/app/core/model/employee';
+import { Dboperation } from '../../../core/model/dboperation.enum';
+import { ApiService } from '../../../services/api.service';
+import { Employee } from '../../../core/model/employee';
 import { MatTableDataSource } from '@angular/material';
 
 @Component({

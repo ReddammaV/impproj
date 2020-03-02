@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/services/api.service';
-import { Employee } from 'src/app/core/model/employee';
+import { ApiService } from '../../../services/api.service';
+import { Employee } from '../../../core/model/employee';
 import { MatTableDataSource, MatDialog } from '@angular/material';
 import { MaterialAddComponent } from '../material-add/material-add.component';
 import { FormGroup } from '@angular/forms';
-import { Dboperation } from 'src/app/core/model/dboperation.enum';
+import { Dboperation } from '../../../core/model/dboperation.enum';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 

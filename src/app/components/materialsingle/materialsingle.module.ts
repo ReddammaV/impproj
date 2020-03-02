@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MaterialsingleRoutingModule } from './materialsingle-routing.module';
 import { MaterialsingleComponent } from './materialsingle/materialsingle.component';
-import { MaterialModule } from 'src/app/material/material.module';
+import { MaterialModule } from '../../material/material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({

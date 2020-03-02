@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, EmailValidator } from '@angular/forms';
-import { Emailvalidator, NumericFieldValidator, MustMatchValidators } from 'src/app/core/validators/validations.validators';
+import { Emailvalidator, NumericFieldValidator, MustMatchValidators } from '../../../core/validators/validations.validators';
 
 @Component({
   selector: 'app-bootstrapvalidations',

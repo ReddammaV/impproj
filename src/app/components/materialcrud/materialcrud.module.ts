@@ -7,7 +7,7 @@ import { MaterialAddComponent } from './material-add/material-add.component';
 import { MaterialViewComponent } from './material-view/material-view.component';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
-import { MaterialModule } from 'src/app/material/material.module';
+import { MaterialModule } from '../../material/material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
