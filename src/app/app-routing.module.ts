@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'material-validations',
     loadChildren: () => import('./components/materialvalidations/materialvalidations.module').then(m => m.MaterialvalidationsModule),
   },
+  {
+    path: 'flex',
+    loadChildren: () => import('./components/flex/flex.module').then(m => m.FlexModule),
+  },
 
 ];
 

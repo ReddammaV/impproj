@@ -26,7 +26,7 @@ import { LoaderService } from './services/loader.service';
     ReactiveFormsModule, 
     FormsModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [
     LoaderService,
