@@ -1,0 +1,116 @@
+<!-- <h1 mat-dialog-title>Favorite Animal <mat-icon class="float-right cursor" (click)="dialogClose()">close</mat-icon>
+</h1> -->
+<div mat-dialog-content>
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit(employeeForm)">
+        <div class="emp-form">
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>First Name</mat-label>
+                        <input matInput placeholder="First Name" formControlName="firstName">
+                    </mat-form-field>
+                    <!-- validators start -->
+                    <mat-error class="smalltext">
+                        <span *ngIf="f['firstName'].touched  && !f['firstName'].valid">
+                            <span *ngIf="f['firstName'].hasError('required')">
+                                First Name is required !!
+                            </span>
+                            <span *ngIf="f['firstName'].hasError('minlength')">
+                                minLength is 3 !!
+                            </span>
+                            <span *ngIf="f['firstName'].hasError('maxlength')">
+                                maxLength is 10 !!
+                            </span>
+                        </span>
+                    </mat-error>
+                    <!-- validators end -->
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput placeholder="Last Name" formControlName="lastName">
+                    </mat-form-field>
+                    <!-- validators start -->
+                    <mat-error class="smalltext">
+                        <span *ngIf="f['lastName'].touched  && !f['lastName'].valid">
+                            <span *ngIf="f['lastName'].hasError('required')">
+                                Last Name is required !!
+                            </span>
+                            <span *ngIf="f['lastName'].hasError('minlength')">
+                                minLength is 3 !!
+                            </span>
+                            <span *ngIf="f['lastName'].hasError('maxlength')">
+                                maxLength is 10 !!
+                            </span>
+                        </span>
+                    </mat-error>
+                    <!-- validators end -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Employee Code</mat-label>
+                        <input matInput placeholder="Last Name" formControlName="employeeCode">
+                    </mat-form-field>
+                    <!-- validators start -->
+                    <mat-error class="smalltext">
+                        <span *ngIf="f['employeeCode'].touched  && !f['employeeCode'].valid">
+                            <span *ngIf="f['employeeCode'].hasError('required')">
+                                Employee Code is required !!
+                            </span>
+                        </span>
+                    </mat-error>
+                    <!-- validators end -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Address</mat-label>
+                        <input matInput placeholder="Last Name" formControlName="address">
+                    </mat-form-field>
+                    <!-- validators start -->
+                    <mat-error class="smalltext">
+                        <span *ngIf="f['address'].touched  && !f['address'].valid">
+                            <span *ngIf="f['address'].hasError('required')">
+                                Address is required !!
+                            </span>
+                        </span>
+                    </mat-error>
+                    <!-- validators end -->
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Contact Number</mat-label>
+                        <input matInput placeholder="Contact Number" formControlName="contactNumber">
+                    </mat-form-field>
+                    <!-- validators start -->
+                    <mat-error class="smalltext">
+                        <span *ngIf="f['contactNumber'].touched  && !f['contactNumber'].valid">
+                            <span *ngIf="f['contactNumber'].hasError('required')">
+                                Contact Number is required !!
+                            </span>
+                        </span>
+                    </mat-error>
+                    <!-- validators end -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <button type="submit" class="btn btn-success btn-lg btn-block" [disabled]="!employeeForm.valid">
+                        <i class="fa fa-save"></i>
+                        UPDATE
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <button (click)="onReset()" class="btn btn-primary btn-lg btn-block">
+                        <i class="fa fa-retweet"></i>
+                        CLEAR
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,154 @@
+<!-- <form [formGroup]="employeeForm" (ngSubmit)="onSubmit(employeeForm)">
+  <div class="emp-form">
+    <div class="row">
+      <div class="col-md-6 form-group">
+        <input placeholder="Firts Name" class="form-control" formControlName="firstName">
+        <div class="smalltext" *ngIf="employeeForm.controls['firstName'].touched  && !employeeForm.controls['firstName'].valid">
+          <span style="color: green;" *ngIf="employeeForm.controls['firstName'].hasError('required')">
+            {{validationMessages.firstName.required}}
+          </span>
+          <div *ngIf="formErrors.firstName" class="text-danger">
+            {{formErrors.firstName}}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 form-group">
+        <input placeholder="Last Name" class="form-control" formControlName="lastName">
+        <div class="smalltext" *ngIf="employeeForm.controls['lastName'].touched  && !employeeForm.controls['lastName'].valid">
+          <span style="color: red;" *ngIf="employeeForm.controls['lastName'].hasError('required')">
+            {{validationMessages.lastName.required}}
+          </span>
+          <div *ngIf="formErrors.lastName" class="text-danger">
+            {{formErrors.lastName}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 form-group">
+        <input placeholder="Employee Code" class="form-control" formControlName="employeeCode">
+        <div class="smalltext" *ngIf="employeeForm.controls['employeeCode'].touched  && !employeeForm.controls['employeeCode'].valid">
+          <span style="color: red;" *ngIf="employeeForm.controls['employeeCode'].hasError('required')">
+            {{validationMessages.employeeCode.required}}
+          </span>
+          <div *ngIf="formErrors.employeeCode" class="text-danger">
+            {{formErrors.employeeCode}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 form-group">
+        <input placeholder="Address" class="form-control" formControlName="address">
+        <div class="smalltext" *ngIf="employeeForm.controls['address'].touched  && !employeeForm.controls['address'].valid">
+          <span style="color: red;" *ngIf="employeeForm.controls['address'].hasError('required')">
+            {{validationMessages.address.required}}
+          </span>
+          <div *ngIf="formErrors.address" class="text-danger">
+            {{formErrors.address}}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 form-group">
+        <input placeholder="Contact Number" class="form-control" formControlName="contactNumber">
+        <div class="smalltext" *ngIf="employeeForm.controls['contactNumber'].touched  && !employeeForm.controls['contactNumber'].valid">
+          <span style="color: red;" *ngIf="employeeForm.controls['contactNumber'].hasError('required')">
+            {{validationMessages.contactNumber.required}}
+          </span>
+          <div *ngIf="formErrors.contactNumber" class="text-danger">
+            {{formErrors.contactNumber}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <button type="submit" class="btn btn-success btn-lg btn-block">
+          <i class="fa fa-save"></i>
+          SAVE
+        </button>
+      </div>
+      <div class="col-md-4">
+        <button (click)="onReset()" class="btn btn-primary btn-lg btn-block">
+          <i class="fa fa-retweet"></i>
+          CLEAR
+        </button>
+      </div>
+    </div>
+  </div>
+</form> -->
+
+<!-- second type validations -->
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit(employeeForm)">
+  <div class="emp-form">
+    <div class="row">
+      <div class="col-md-6 form-group">
+        <input placeholder="Firts Name" class="form-control" formControlName="firstName"
+          [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
+        <!-- validators start -->
+        <div *ngIf="submitted && f.firstName.errors" class="smalltext text-danger">
+          <div *ngIf="f.firstName.errors.required">First Name is required</div>
+          <div *ngIf="f.firstName.errors.minlength">First Name can not be less than 3 characters long</div>
+          <div *ngIf="f.firstName.errors.maxlength">First Name can not be more than 10 characters long</div>
+        </div>
+        <!-- validators end -->
+      </div>
+      <div class="col-md-6 form-group">
+        <input placeholder="Last Name" class="form-control" formControlName="lastName"
+          [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
+        <!-- validators start -->
+        <div *ngIf="submitted && f.lastName.errors" class="smalltext text-danger">
+          <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+          <div *ngIf="f.lastName.errors.minlength">Last Name can not be less than 3 characters long</div>
+          <div *ngIf="f.lastName.errors.maxlength">Last Name can not be more than 10 characters long</div>
+        </div>
+        <!-- validators end -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 form-group">
+        <input placeholder="Employee Code" class="form-control" formControlName="employeeCode"
+          [ngClass]="{ 'is-invalid': submitted && f.employeeCode.errors }">
+        <!-- validators start -->
+        <div *ngIf="submitted && f.employeeCode.errors" class="smalltext text-danger">
+          <div *ngIf="f.employeeCode.errors.required">Employee Code is required</div>
+        </div>
+        <!-- validators end -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 form-group">
+        <input placeholder="Address" class="form-control" formControlName="address"
+          [ngClass]="{ 'is-invalid': submitted && f.address.errors }">
+        <!-- validators start -->
+        <div *ngIf="submitted && f.address.errors" class="smalltext text-danger">
+          <div *ngIf="f.address.errors.required">Address is required</div>
+        </div>
+        <!-- validators end -->
+      </div>
+      <div class="col-md-6 form-group">
+        <input placeholder="Contact Number" class="form-control" formControlName="contactNumber"
+          [ngClass]="{ 'is-invalid': submitted && f.contactNumber.errors }">
+        <!-- validators start -->
+        <div *ngIf="submitted && f.contactNumber.errors" class="smalltext text-danger">
+          <div *ngIf="f.contactNumber.errors.required">Contact Number is required</div>
+        </div>
+        <!-- validators end -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <button type="submit" class="btn btn-success btn-lg btn-block">
+          <i class="fa fa-save"></i>
+          SAVE
+        </button>
+      </div>
+      <div class="col-md-4">
+        <button (click)="onReset()" class="btn btn-primary btn-lg btn-block">
+          <i class="fa fa-retweet"></i>
+          CLEAR
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,168 @@
+<h2>Material Validations</h2>
+
+<!-- form -->
+<div class="col-md-12 mt-5">
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit(employeeForm)" autocomplete="off">
+        <div class="emp-form">
+            <div class="row">
+                <div class="col-md-12">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>First Name</mat-label>
+                        <input matInput placeholder="First Name" formControlName="firstName">
+                    </mat-form-field>
+                    <!-- validators start -->
+                    <mat-error class="pass_error"
+                        *ngIf="employeeForm['controls'].firstName.hasError('required') && employeeForm.controls['firstName'].touched">
+                        First Name is required
+                    </mat-error>
+                    <mat-error class="pass_error"
+                        *ngIf="employeeForm['controls'].firstName.hasError('maxlength') && employeeForm.controls['firstName'].touched">
+                        First Name max length10</mat-error>
+                    <mat-error class="pass_error"
+                        *ngIf="employeeForm['controls'].firstName.hasError('minlength') && employeeForm.controls['firstName'].touched">
+                        First Name min length 3</mat-error>
+                    <!-- validators end -->
+                </div>
+                <div class="col-md-12">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput placeholder="Last Name" formControlName="lastName">
+                    </mat-form-field>
+                    <!-- validators start -->
+                    <mat-error class="pass_error"
+                        *ngIf="employeeForm['controls'].lastName.hasError('required') && employeeForm.controls['lastName'].touched">
+                        Last Name is required
+                    </mat-error>
+                    <mat-error class="pass_error"
+                        *ngIf="employeeForm['controls'].lastName.hasError('maxlength') && employeeForm.controls['lastName'].touched">
+                        Last Name max length10</mat-error>
+                    <mat-error class="pass_error"
+                        *ngIf="employeeForm['controls'].lastName.hasError('minlength') && employeeForm.controls['lastName'].touched">
+                        Last Name min length 3</mat-error>
+                    <!-- validators end -->
+                </div>
+            </div>
+            <!-- email -->
+            <div class="row">
+                <div class="col-md-12">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Email" formControlName="email">
+                    </mat-form-field>
+                    <!-- validators start -->
+                    <mat-error *ngIf="!employeeForm.controls['email'].valid && employeeForm.controls['email'].touched">
+                        {{ getErrorEmail() }}
+                    </mat-error>
+                    <!-- validators end -->
+                </div>
+            </div>
+            <!-- email -->
+            <!-- mobile -->
+            <div class="row">
+                <div class="col-md-12">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Mobile Number</mat-label>
+                        <input matInput placeholder="Mobile Number" formControlName="mobile">
+                    </mat-form-field>
+                    <!-- validators start -->
+                    <mat-error
+                        *ngIf="!employeeForm.controls['mobile'].valid && employeeForm.controls['mobile'].touched">
+                        {{ getMobile() }}
+                    </mat-error>
+                    <!-- validators end -->
+                </div>
+            </div>
+            <!-- mobile -->
+            <!-- password -->
+            <div class="row">
+                <div class="col-md-12">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Password" formControlName="password">
+                    </mat-form-field>
+                    <!-- validators start -->
+                    <mat-error class="pass_error"
+                        *ngIf="employeeForm['controls'].password.hasError('required') && employeeForm.controls['password'].touched">
+                        Password is required
+                    </mat-error>
+                    <mat-error class="pass_error"
+                        *ngIf="employeeForm['controls'].password.hasError('minlength') && employeeForm.controls['password'].touched">
+                        Password min length 6</mat-error>
+                    <!-- validators end -->
+                </div>
+            </div>
+            <!-- password -->
+            <!-- confirmpassword -->
+            <div class="row">
+                <div class="col-md-12">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Confirm Password</mat-label>
+                        <input matInput placeholder="Confirm Password" formControlName="confirmPassword">
+                    </mat-form-field>
+                    <!-- validators start -->
+                    <mat-error
+                        *ngIf="!employeeForm.controls['confirmPassword'].valid && employeeForm.controls['confirmPassword'].touched">
+                        {{ getConfirmPassword() }}
+                    </mat-error>
+                    <!-- validators end -->
+                </div>
+            </div>
+            <!-- confirmpassword -->
+            <div class="row">
+                <div class="col-md-12">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Employee Code</mat-label>
+                        <input matInput placeholder="Employee COde" formControlName="employeeCode">
+                    </mat-form-field>
+                    <!-- validators start -->
+                    <mat-error class="pass_error"
+                        *ngIf="employeeForm['controls'].employeeCode.hasError('required') && employeeForm.controls['employeeCode'].touched">
+                        Employee Code is required
+                    </mat-error>
+                    <!-- validators end -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Address</mat-label>
+                        <input matInput placeholder="Address" formControlName="address">
+                    </mat-form-field>
+                    <!-- validators start -->
+                    <mat-error class="pass_error"
+                        *ngIf="employeeForm['controls'].address.hasError('required') && employeeForm.controls['address'].touched">
+                        Address is required
+                    </mat-error>
+                    <!-- validators end -->
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Contact Number</mat-label>
+                        <input matInput placeholder="Contact Number" formControlName="contactNumber">
+                    </mat-form-field>
+                    <!-- validators start -->
+                    <mat-error class="pass_error"
+                        *ngIf="employeeForm['controls'].contactNumber.hasError('required') && employeeForm.controls['contactNumber'].touched">
+                        Contact Number is required
+                    </mat-error>
+                    <!-- validators end -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <button type="submit" class="btn btn-success btn-lg btn-block" [disabled]="!employeeForm.valid">
+                        <i class="fa fa-save"></i>
+                        SAVE
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <button (click)="onReset()" class="btn btn-primary btn-lg btn-block">
+                        <i class="fa fa-retweet"></i>
+                        CLEAR
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- form -->

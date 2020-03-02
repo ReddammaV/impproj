@@ -1,0 +1,15 @@
+.smalltext {
+    font-size: 0.8em;
+    margin-top: -1em;
+}
+input.ng-invalid.ng-touched {
+    border: none !important;
+}
+.mat-form-field, mat-form-field {
+    width: 100% !important;
+    margin-top: 1em;
+}
+.mat-error, mat-error{
+    font-size: 0.8em;
+    margin-top: -1em;
+}

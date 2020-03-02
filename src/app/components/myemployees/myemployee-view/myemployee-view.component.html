@@ -1,0 +1,23 @@
+<div class="container mt-4">
+    <button class="btn btn-success" (click)="backClicked()">Back</button>
+    <h2 class="mt-3">View User</h2>
+  </div>
+  <div class="container">
+    <div class="row">
+      
+      <label class="col-md-3" for="firstName">First Name:</label>
+      <p class="col-md-9">{{userinfo?.firstName}}</p>
+  
+      <label class="col-md-3" for="lastName">Last Name:</label>
+      <p class="col-md-9">{{userinfo?.lastName}}</p>
+
+      <label class="col-md-3" for="employeeCode">Employee Code:</label>
+      <p class="col-md-9">{{userinfo?.employeeCode}}</p>
+
+      <label class="col-md-3" for="address">Address:</label>
+      <p class="col-md-9">{{userinfo?.address}}</p>
+
+      <label class="col-md-3" for="contactNumber">Contact Number:</label>
+      <p class="col-md-9">{{userinfo?.contactNumber}}</p>
+    </div>
+  </div>
